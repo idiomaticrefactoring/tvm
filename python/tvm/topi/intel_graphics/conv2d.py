@@ -371,8 +371,7 @@ def _schedule_cl_spatialpack_NCHWc(cfg, s, op):
     OUTPUT_BLOCK_WIDTH = cfg["block_ow"].val
 
     # schedule conv
-    z_factor = 1
-    y_factor = 1
+    y_factor = z_factor = 1
     x_factor = 16
     thread_z = te.thread_axis((0, z_factor), "threadIdx.z")
     thread_y = te.thread_axis((0, y_factor), "threadIdx.y")
